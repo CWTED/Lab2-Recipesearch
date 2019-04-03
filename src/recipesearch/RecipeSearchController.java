@@ -73,14 +73,21 @@ public class RecipeSearchController implements Initializable {
     @FXML
     private ImageView listItemPic;
 
+    @FXML
+    private Label recipeDesc;
+
+    @FXML
+    private ImageView appImg;
+
     private Map<String, RecipeListItem> recipeListItemMap = new HashMap<String, RecipeListItem>();
 
     private void updateRecipeList() {
         searchResultPane.getChildren().clear();
-        for (RecipeListItem r : recipeListItemMap.values()){
-            searchResultPane.getChildren().add(r);
+        List<Recipe> items = backend.getRecipes();
+        for (Recipe r : items) {
+            searchResultPane.getChildren().add(recipeListItemMap.get(r.getName()));
         }
-       /* searchResultPane.getChildren().clear();
+        /*searchResultPane.getChildren().clear();
         List<Recipe> recipes = backend.getRecipes();
         for (Recipe r : recipes){
             searchResultPane.getChildren().add(new RecipeListItem(r, this));
@@ -210,8 +217,8 @@ public class RecipeSearchController implements Initializable {
             RecipeListItem recipeListItem = new RecipeListItem(recipe, this);
             recipeListItemMap.put(recipe.getName(), recipeListItem);
         }
-        updateRecipeList();
 
+        updateRecipeList();
 
     }
 

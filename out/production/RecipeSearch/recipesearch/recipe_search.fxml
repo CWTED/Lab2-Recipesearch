@@ -8,6 +8,7 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
@@ -20,9 +21,13 @@
          <children>
             <AnchorPane fx:id="recipeDetailPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FF0000;">
                <children>
-                  <Label fx:id="listItemLabel" layoutX="400.0" layoutY="10.0" text="Label" />
+                  <Label fx:id="listItemLabel" layoutX="400.0" layoutY="30.0" text="Label">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font></Label>
                   <ImageView fx:id="listItemPic" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                   <Button fx:id="closeButton" layoutX="735.0" layoutY="6.0" mnemonicParsing="false" onAction="#closeRecipeView" text="Stäng" />
+                  <Label fx:id="recipeDesc" layoutX="400.0" layoutY="100.0" text="Label" wrapText="true" />
                </children>
             </AnchorPane>
             <SplitPane fx:id="searchPane" dividerPositions="0.35" prefHeight="160.0" prefWidth="200.0">
@@ -63,6 +68,11 @@
                            </font>
                         </Label>
                         <Label fx:id="maxTimeLabel" alignment="CENTER_RIGHT" layoutX="178.0" layoutY="438.0" prefHeight="17.0" prefWidth="72.0" text="." />
+                        <ImageView fx:id="appImg" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="338.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="10.0">
+                           <image>
+                              <Image url="@resources/logo.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
